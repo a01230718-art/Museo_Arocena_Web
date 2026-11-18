@@ -2670,6 +2670,255 @@
       }
     }
 
+    // --- SUPABASE RESERVATION INTEGRATION ---
+    const SUPABASE_URL = 'https://hbkidqzahlzxpmsrvyio.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_0O24T4HthTKtjUV-iY3_-g_MepKxM5o';
+
+    let currentSelection = {
+      experience: "Mesa a la Carta",
+      guests: "2",
+      date: "Vie 22 Nov",
+      time: "14:00",
+      space: "Salón Arcadas 1910"
+    };
+
+    function updateExpSelection(radio) {
+      if (!radio) return;
+      currentSelection.experience = radio.value;
+      const cards = document.querySelectorAll('.exp-card');
+      cards.forEach(c => {
+        const input = c.querySelector('input');
+        const indicator = c.querySelector('.exp-indicator');
+        const dot = indicator ? indicator.querySelector('span') : null;
+        if (input && input.checked) {
+          c.classList.remove('bg-surface-container-low');
+          c.classList.add('bg-surface-container-lowest');
+          if (indicator) {
+            indicator.classList.remove('bg-surface-container-highest');
+            indicator.classList.add('bg-primary');
+          }
+          if (dot) {
+            dot.classList.remove('bg-transparent');
+            dot.classList.add('bg-surface');
+          }
+        } else {
+          c.classList.remove('bg-surface-container-lowest');
+          c.classList.add('bg-surface-container-low');
+          if (indicator) {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-surface-container-highest');
+          }
+          if (dot) {
+            dot.classList.remove('bg-surface');
+            dot.classList.add('bg-transparent');
+          }
+        }
+      });
+      syncSummary();
+    }
+
+    function selectGuests(count, btn) {
+      currentSelection.guests = count.toString();
+      document.querySelectorAll('.guest-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+      });
+      if (btn) {
+        btn.classList.remove('bg-surface-container-low', 'text-primary');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+      const label = document.getElementById('guests-label');
+      if (label) label.textContent = count === '7+' ? 'Grupo Especial (7+)' : `${count} Personas`;
+      syncSummary();
+    }
+
+    function selectDate(dateStr, btn) {
+      currentSelection.date = dateStr;
+      document.querySelectorAll('.date-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+        const dayLabel = b.querySelector('.font-label-caps');
+        if (dayLabel) {
+          dayLabel.classList.remove('text-on-primary/80');
+          dayLabel.classList.add('text-on-surface-variant');
+        }
+        const numLabel = b.querySelector('.font-headline-sm');
+        if (numLabel) {
+          numLabel.classList.remove('text-on-primary');
+          numLabel.classList.add('text-primary');
+        }
+      });
+      if (btn) {
+        btn.classList.remove('bg-surface-container-low', 'text-primary');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+        const activeDay = btn.querySelector('.font-label-caps');
+        if (activeDay) {
+          activeDay.classList.remove('text-on-surface-variant');
+          activeDay.classList.add('text-on-primary/80');
+        }
+        const activeNum = btn.querySelector('.font-headline-sm');
+        if (activeNum) {
+          activeNum.classList.remove('text-primary');
+          activeNum.classList.add('text-on-primary');
+        }
+      }
+      syncSummary();
+    }
+
+    function selectTime(timeStr, btn) {
+      currentSelection.time = timeStr;
+      document.querySelectorAll('.time-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+      });
+      if (btn) {
+        btn.classList.remove('bg-surface-container-low', 'text-primary');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+      const label = document.getElementById('time-label');
+      if (label) label.textContent = `${timeStr} hrs`;
+      syncSummary();
+    }
+
+    function updateSpaceSelection(radio) {
+      if (!radio) return;
+      currentSelection.space = radio.value;
+      document.querySelectorAll('.space-pref').forEach(card => {
+        const input = card.querySelector('input');
+        const indicator = card.querySelector('.space-indicator');
+        const dot = indicator ? indicator.querySelector('span') : null;
+        if (input && input.checked) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-container-lowest');
+          if (indicator) {
+            indicator.classList.remove('bg-surface-container-highest');
+            indicator.classList.add('bg-primary');
+          }
+          if (dot) {
+            dot.classList.remove('bg-transparent');
+            dot.classList.add('bg-surface');
+          }
+        } else {
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-surface-container-low');
+          if (indicator) {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-surface-container-highest');
+          }
+          if (dot) {
+            dot.classList.remove('bg-surface');
+            dot.classList.add('bg-transparent');
+          }
+        }
+      });
+      syncSummary();
+    }
+
+    function syncSummary() {
+      const summaryTitle = document.getElementById('summary-title');
+      const summaryDetails = document.getElementById('summary-details');
+      if (summaryTitle && summaryDetails) {
+        summaryTitle.textContent = `${currentSelection.experience} · ${currentSelection.guests} ${currentSelection.guests === '1' ? 'Persona' : 'Comensales'}`;
+        summaryDetails.textContent = `${currentSelection.date} · ${currentSelection.time} hrs · ${currentSelection.space}`;
+      }
+    }
+
+    async function showConfirmationModal() {
+      const nameInput = document.getElementById('cust-name');
+      const emailInput = document.getElementById('cust-email');
+      const phoneInput = document.getElementById('cust-phone');
+      const notesInput = document.querySelector('textarea');
+
+      const nombre = nameInput ? nameInput.value : '';
+      const email = emailInput ? emailInput.value : '';
+      const telefono = phoneInput ? phoneInput.value : '';
+      const notas = notesInput ? notesInput.value : '';
+
+      const modalEmail = document.getElementById('modal-email');
+      if (modalEmail) modalEmail.textContent = email || 'tu correo';
+      const modalExp = document.getElementById('modal-exp');
+      if (modalExp) modalExp.textContent = currentSelection.experience;
+      const modalGuests = document.getElementById('modal-guests');
+      if (modalGuests) modalGuests.textContent = `${currentSelection.guests} comensales`;
+      const modalDatetime = document.getElementById('modal-datetime');
+      if (modalDatetime) modalDatetime.textContent = `${currentSelection.date} · ${currentSelection.time} hrs (${currentSelection.space})`;
+
+      const modal = document.getElementById('confirmation-modal');
+      if (modal) modal.classList.remove('hidden');
+
+      // Enviar de forma segura a Supabase en segundo plano
+      try {
+        await fetch(`${SUPABASE_URL}/rest/v1/reservaciones`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_PUBLISHABLE_KEY,
+            'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            experiencia: currentSelection.experience,
+            numero_personas: currentSelection.guests,
+            fecha: currentSelection.date,
+            hora: currentSelection.time,
+            espacio: currentSelection.space,
+            notas: notas,
+            estado: 'confirmada'
+          })
+        });
+      } catch (err) {
+        console.error('Error al registrar reservación en Supabase:', err);
+      }
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('confirmation-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Modal de eventos (Screen 05)
+    let currentGuestCount = 1;
+    function openBookingModal(title, price, meta) {
+      const modalTitle = document.getElementById('modalEventTitle');
+      if (modalTitle) modalTitle.innerText = title;
+      const modalPrice = document.getElementById('modalEventPrice');
+      if (modalPrice) modalPrice.innerText = price;
+      const modalMeta = document.getElementById('modalEventMeta');
+      if (modalMeta) modalMeta.innerText = meta;
+      currentGuestCount = 1;
+      const gc = document.getElementById('guestCount');
+      if (gc) gc.innerText = currentGuestCount;
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function changeGuestCount(delta) {
+      currentGuestCount = Math.max(1, Math.min(8, currentGuestCount + delta));
+      const gc = document.getElementById('guestCount');
+      if (gc) gc.innerText = currentGuestCount;
+    }
+
+    function confirmBooking() {
+      closeBookingModal();
+      const toast = document.getElementById('toastSuccess');
+      if (toast) {
+        toast.classList.remove('hidden');
+        setTimeout(() => { toast.classList.add('hidden'); }, 4000);
+      }
+    }
+
+    function openInquiryModal() {
+      openBookingModal('Encuentro Exclusivo a Puerta Cerrada', 'Cotización según aforo', 'Fecha flexible · Salas Virreinales');
+    }
+
     // Attach click listeners to all data-path links generated by Stitch
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('[data-path]').forEach(el => {
@@ -2682,7 +2931,7 @@
           else if (path === 'art-menu') navigateTo('arte_menu');
           else if (path === 'events') navigateTo('eventos');
           else if (path === 'cart') navigateTo('menu');
-          else if (path === 'reservation') navigateTo('reservaciones');
+          else if (path === 'reservation' || path === 'reserve') navigateTo('reservaciones');
         });
       });
 
