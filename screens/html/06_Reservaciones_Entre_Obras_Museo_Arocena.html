@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-primary-fixed-variant": "#494644", "secondary": "#a04028", "inverse-surface": "#32302b", "on-primary-container": "#878380", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-container-low": "#f8f3eb", "on-tertiary": "#ffffff", "surface-bright": "#fef9f1", "on-secondary-fixed": "#3c0700", "inverse-primary": "#cbc5c2", "primary-container": "#1d1b19", "outline": "#7d766f", "on-tertiary-fixed": "#400010", "secondary-fixed-dim": "#ffb4a2", "outline-variant": "#cec5bd", "secondary-fixed": "#ffdad2", "on-tertiary-container": "#c66773", "on-background": "#1d1c17", "primary-fixed-dim": "#cbc5c2", "background": "#fef9f1", "surface-variant": "#e7e2da", "on-tertiary-fixed-variant": "#7a2c38", "surface-dim": "#ded9d2", "surface-container-high": "#ece8e0", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#802913", "on-surface-variant": "#4b4640", "on-primary-fixed": "#1d1b19", "tertiary": "#000000", "tertiary-fixed": "#ffdadc", "tertiary-container": "#400010", "surface-tint": "#615e5b", "on-error-container": "#93000a", "secondary-container": "#fe8769", "error": "#ba1a1a", "surface-container-highest": "#e7e2da", "on-secondary-container": "#74200a", "primary-fixed": "#e7e1de", "inverse-on-surface": "#f5f0e8", "on-surface": "#1d1c17", "surface": "#fef9f1", "tertiary-fixed-dim": "#ffb2b9", "surface-container": "#f2ede5", "surface-container-lowest": "#ffffff", "primary": "#000000" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.75rem", "margin": "2rem", "space-xs": "0.25rem", "gutter": "1.5rem", "space-xl": "3rem", "space-md": "1rem" }, "fontFamily": { "display-lg-mobile": ["Playfair Display"], "label-caps": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "display-lg": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.14em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "500" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logotipo ENTRE OBRAS" class="h-8 w-8 object-contain rounded-lg shadow-sm" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSJub25lIj4KICA8IS0tIFJvdW5kZWQgTXVzZXVtIEVtYmxlbSBpbiBEYXJrIE9ueXggLS0+CiAgPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTAiIGZpbGw9IiMxRDFCMTkiLz4KICA8IS0tIEVsZWdhbnQgQXJjaCBMaW5lIGluIFRlcnJhY290dGEgLS0+CiAgPHBhdGggZD0iTTEyIDMwVjE5QzEyIDE0LjU4MTcgMTUuNTgxNyAxMSAyMCAxMUMyNC40MTgzIDExIDI4IDE0LjU4MTcgMjggMTlWMzAiIHN0cm9rZT0iI0EwNDAyOCIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gR29sZGVuIE9jaHJlIFN0YXIgLyBDZW50ZXIgSmV3ZWwgLS0+CiAgPGNpcmNsZSBjeD0iMjAiIGN5PSIxOSIgcj0iMiIgZmlsbD0iI0U2QTE1QyIvPgogIDwhLS0gRU8gTW9ub2dyYW0gLS0+CiAgPHRleHQgeD0iMjAiIHk9IjMwIiBmb250LWZhbWlseT0iJ1BsYXlmYWlyIERpc3BsYXknLCBHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0ZFRjlGMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0wLjIiPkVPPC90ZXh0Pgo8L3N2Zz4K" /><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">ENTRE OBRAS</span></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-secondary">museum</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Museo Arocena</span></div></div></div><div class="flex items-center gap-space-xs"><span class="hidden">Home</span><a class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-secondary transition-colors" data-path="cart" href="#"><span class="material-symbols-outlined text-[22px]">local_mall</span><span class="absolute top-2 right-2 w-4 h-4 bg-secondary text-on-secondary rounded-full flex items-center justify-center font-label-caps text-[9px] font-bold leading-none ring-2 ring-surface">2</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-12">
+<!-- Header Editorial de Sección -->
+<section class="px-space-md pt-6 pb-4">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Acceso &amp; Hospitalidad · Museo Arocena</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight mb-2">
+      Reserva tu Mesa
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Asegura tu lugar en una atmósfera donde el diálogo entre el arte virreinal y la alta gastronomía despierta los sentidos.
+    </p>
+<!-- Beneficio de Cortesía Cultural -->
+<div class="mt-4 p-space-sm bg-surface-container-high rounded-lg flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-[13px] text-primary font-semibold leading-tight">Acceso Preferente a Colección</span>
+<span class="font-body-md text-[12px] text-on-surface-variant">Cada comensal recibe pase de cortesía a salas de exhibición permanente.</span>
+</div>
+</div>
+</section>
+<!-- Formulario de Reserva Interactivo -->
+<form class="flex flex-col gap-6 px-space-md" id="reservation-form" onsubmit="event.preventDefault(); showConfirmationModal();">
+<!-- 1. Selector de Experiencia Gastronómica -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">1. Tipo de Experiencia</span>
+<span class="font-label-sm text-[11px] text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">palette</span> Curaduría en Sala
+        </span>
+</div>
+<div class="grid grid-cols-1 gap-2.5" id="exp-container">
+<!-- Mesa a la Carta (Activo) -->
+<label class="relative flex flex-col p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-lowest shadow-sm exp-card" data-exp="carta">
+<input checked="" class="sr-only" name="experience" onchange="updateExpSelection(this)" type="radio" value="Mesa a la Carta"/>
+<div class="flex items-start justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">restaurant</span>
+<span class="font-title-md text-[15px] text-primary">Mesa a la Carta</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-primary flex items-center justify-center shrink-0 exp-indicator">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-[13px] pl-6 leading-snug">
+            Salón de Arcadas Históricas · Menú regular y carta estacional de temporada.
+          </p>
+</label>
+<!-- Maridaje Degustación -->
+<label class="relative flex flex-col p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-low shadow-sm exp-card" data-exp="maridaje">
+<input class="sr-only" name="experience" onchange="updateExpSelection(this)" type="radio" value="Maridaje Degustación"/>
+<div class="flex items-start justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">wine_bar</span>
+<span class="font-title-md text-[15px] text-primary">Maridaje Degustación</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 exp-indicator">
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-[13px] pl-6 leading-snug">
+            Menú guiado de 5 tiempos en diálogo con óleos del siglo XVIII y sommelier.
+          </p>
+</label>
+<!-- Terraza & Velada Nocturna -->
+<label class="relative flex flex-col p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-low shadow-sm exp-card" data-exp="terraza">
+<input class="sr-only" name="experience" onchange="updateExpSelection(this)" type="radio" value="Terraza &amp; Velada Nocturna"/>
+<div class="flex items-start justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">nights_stay</span>
+<span class="font-title-md text-[15px] text-primary">Terraza &amp; Velada Nocturna</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 exp-indicator">
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-[13px] pl-6 leading-snug">
+            Vista al patio virreinal iluminado, coctelería botánica y cielo lagunero.
+          </p>
+</label>
+<!-- Experiencia Personalizada -->
+<label class="relative flex flex-col p-3.5 rounded-xl cursor-pointer transition-all bg-surface-container-low shadow-sm exp-card" data-exp="dulce">
+<input class="sr-only" name="experience" onchange="updateExpSelection(this)" type="radio" value="Experiencia Personalizada"/>
+<div class="flex items-start justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">draw</span>
+<span class="font-title-md text-[15px] text-primary">Creación de Obra Dulce</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 exp-indicator">
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-[13px] pl-6 leading-snug">
+            Intervención de postre en mesa con paleta de pigmentos culinarios orgánicos.
+          </p>
+</label>
+</div>
+</section>
+<!-- 2. Selector de Comensales -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">2. Número de Comensales</span>
+<span class="font-label-sm text-secondary font-semibold" id="guests-label">2 Personas</span>
+</div>
+<div class="flex items-center justify-between gap-1.5 overflow-x-auto pb-1" id="guests-selector">
+<button class="guest-btn flex-1 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[14px] transition-colors" onclick="selectGuests(1, this)" type="button">1</button>
+<button class="guest-btn flex-1 py-2 rounded-lg bg-primary text-on-primary font-title-md text-[14px] shadow-sm transition-colors" onclick="selectGuests(2, this)" type="button">2</button>
+<button class="guest-btn flex-1 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[14px] transition-colors" onclick="selectGuests(3, this)" type="button">3</button>
+<button class="guest-btn flex-1 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[14px] transition-colors" onclick="selectGuests(4, this)" type="button">4</button>
+<button class="guest-btn flex-1 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[14px] transition-colors" onclick="selectGuests(5, this)" type="button">5</button>
+<button class="guest-btn flex-1 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[14px] transition-colors" onclick="selectGuests(6, this)" type="button">6</button>
+<button class="guest-btn px-3 py-2 rounded-lg bg-surface-container-low text-primary font-title-md text-[13px] whitespace-nowrap transition-colors" onclick="selectGuests('7+', this)" type="button">7+ Grupo</button>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">info</span>
+        Mesas de 2 a 4 en arcadas históricas. Grupos mayores requieren confirmación museográfica.
+      </p>
+</section>
+<!-- 3. Calendario / Selección de Fecha -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">3. Fecha de Visita</span>
+<span class="font-label-sm text-primary font-semibold">Noviembre 2024</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 -mx-space-md px-space-md" id="date-selector">
+<!-- Jue 21 -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-surface-container-low flex flex-col items-center justify-center transition-all" onclick="selectDate('Jue 21 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Jue</span>
+<span class="font-headline-sm text-[18px] text-primary my-0.5">21</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Vie 22 (Seleccionado) -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-primary text-on-primary flex flex-col items-center justify-center shadow-md transition-all" onclick="selectDate('Vie 22 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-primary/80 uppercase">Vie</span>
+<span class="font-headline-sm text-[18px] text-on-primary my-0.5">22</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+<!-- Sáb 23 (Alta Demanda) -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-surface-container-low flex flex-col items-center justify-center transition-all" onclick="selectDate('Sáb 23 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Sáb</span>
+<span class="font-headline-sm text-[18px] text-primary my-0.5">23</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary" title="Alta demanda"></span>
+</button>
+<!-- Dom 24 (Matinée cultural) -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-surface-container-low flex flex-col items-center justify-center transition-all" onclick="selectDate('Dom 24 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Dom</span>
+<span class="font-headline-sm text-[18px] text-primary my-0.5">24</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary/40"></span>
+</button>
+<!-- Mar 26 -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-surface-container-low flex flex-col items-center justify-center transition-all" onclick="selectDate('Mar 26 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Mar</span>
+<span class="font-headline-sm text-[18px] text-primary my-0.5">26</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Mié 27 -->
+<button class="date-btn shrink-0 w-16 py-3 rounded-xl bg-surface-container-low flex flex-col items-center justify-center transition-all" onclick="selectDate('Mié 27 Nov', this)" type="button">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Mié</span>
+<span class="font-headline-sm text-[18px] text-primary my-0.5">27</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant px-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Velada con cupo limitado
+        </span>
+<span class="italic text-[10px]">Lunes cerrado por curaduría</span>
+</div>
+</section>
+<!-- 4. Selector de Turno y Horario -->
+<section class="flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">4. Turno de Sala</span>
+<span class="font-label-sm text-secondary font-semibold" id="time-label">14:00 hrs</span>
+</div>
+<!-- Turno Diurno -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-[13px] text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">light_mode</span>
+            Comida &amp; Sobremesa de Sala
+          </span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Luz cenital</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('13:00', this)" type="button">13:00</button>
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('13:30', this)" type="button">13:30</button>
+<button class="time-btn py-2 rounded-lg bg-primary text-on-primary font-title-md text-[13px] shadow-sm" onclick="selectTime('14:00', this)" type="button">14:00</button>
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('14:30', this)" type="button">14:30</button>
+</div>
+</div>
+<!-- Turno Nocturno -->
+<div class="flex flex-col gap-2 mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-[13px] text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">flare</span>
+            Atardecer &amp; Velada Culinaria
+          </span>
+<span class="font-label-caps text-[9px] bg-secondary/10 text-secondary px-1.5 py-0.5 rounded">Iluminación de Sala</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('19:00', this)" type="button">19:00</button>
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('19:30', this)" type="button">19:30</button>
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('20:15', this)" type="button">20:15</button>
+<button class="time-btn py-2 rounded-lg bg-surface-container-low font-title-md text-[13px] text-primary" onclick="selectTime('21:00', this)" type="button">21:00</button>
+</div>
+</div>
+</section>
+<!-- 5. Preferencia de Sala (Atmósfera) -->
+<section class="flex flex-col gap-2.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">5. Espacio de Sala</span>
+<div class="grid grid-cols-2 gap-2.5">
+<label class="flex flex-col p-3 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer space-pref" data-space="arcadas">
+<input checked="" class="sr-only" name="seating_area" onchange="updateSpaceSelection(this)" type="radio" value="Salón Arcadas 1910"/>
+<div class="flex items-center justify-between mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center space-indicator">
+<span class="w-1 h-1 rounded-full bg-surface"></span>
+</span>
+</div>
+<span class="font-title-md text-[13px] text-primary font-semibold">Salón Arcadas 1910</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Clima templado y cantera</span>
+</label>
+<label class="flex flex-col p-3 rounded-xl bg-surface-container-low shadow-sm cursor-pointer space-pref" data-space="patio">
+<input class="sr-only" name="seating_area" onchange="updateSpaceSelection(this)" type="radio" value="Patio Virreinal"/>
+<div class="flex items-center justify-between mb-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">yard</span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest flex items-center justify-center space-indicator">
+<span class="w-1 h-1 rounded-full bg-transparent"></span>
+</span>
+</div>
+<span class="font-title-md text-[13px] text-primary font-semibold">Patio Virreinal</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Fuente y cielo abierto</span>
+</label>
+</div>
+</section>
+<!-- Visual Curation Teaser -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden shadow-md">
+<div class="bg-cover bg-center w-full h-full" data-alt="Interior of Entre Obras restaurant inside Museo Arocena in Torreon, featuring high colonial stone arches, warm gentle sunlight casting soft shadows on archival linen tablecloths, brass museum fixtures, framed neoclassical paintings in the background, elegant minimalist dining table setup with hand-thrown ceramic tableware and wild flora." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9PlLx3P5oiKEqibdbR6azMCOFv2NbDO0kKUmvtdRx6pW-me3ETQsnIrJdtd6vci4jl5LAxdXTYBzxjFk2qV7h2KYr3mNoEx2JjimI0WTl6Iyhboh2I0UVyq5qT07SONJSvBJZvZPQUXdUbuv-gTcncSPjwTczo89OFpvcxLFZl1-7ZHdyyDNeDnEiAtsZ7Zx-7r94fIR94oUrI5Ofq3bRGh2Yy0FlSWhGoitHCKoz')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent flex items-end p-3">
+<div class="flex items-center gap-2 text-surface">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span class="font-headline-sm text-[14px]">Perspectiva de Mesa: Vista a la Arcada Sur</span>
+</div>
+</div>
+</div>
+<!-- 6. Datos de Contacto y Cortesía -->
+<section class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">6. Huésped Principal &amp; Solicitudes</span>
+<div class="flex flex-col gap-2.5">
+<div class="relative">
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wide">Nombre y Apellidos</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">person</span>
+<input class="w-full bg-transparent font-body-md text-primary text-[14px] focus:outline-none" id="cust-name" required="" type="text" value="Valeria Morales"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wide">Correo Electrónico (Para envío de QR)</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">mail</span>
+<input class="w-full bg-transparent font-body-md text-primary text-[14px] focus:outline-none" id="cust-email" required="" type="email" value="valeria.morales@arocena.mx"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wide">Teléfono / WhatsApp</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">phone_iphone</span>
+<input class="w-full bg-transparent font-body-md text-primary text-[14px] focus:outline-none" id="cust-phone" required="" type="tel" value="+52 871 450 8920"/>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1 uppercase tracking-wide">Notas de Sala o Restricciones Dietarias</label>
+<div class="flex items-start px-3 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2 mt-0.5">stylus_note</span>
+<textarea class="w-full bg-transparent font-body-md text-primary text-[13px] focus:outline-none resize-none" placeholder="Celebración especial, intolerancia a frutos secos, preferencia de mesa..." rows="2">Celebración de aniversario. Si es posible, mesa con vista a las piezas novohispanas.</textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Resumen de la Reserva Estilo Cédula de Museo -->
+<section class="p-4 rounded-xl bg-surface-container-high flex flex-col gap-3 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">confirmation_number</span>
+          Cédula de Reserva #EO-2411
+        </span>
+<span class="font-label-sm text-[11px] bg-secondary/15 text-secondary px-2 py-0.5 rounded font-semibold">Sin Cargo Previo</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-[17px] text-primary" id="summary-title">Mesa a la Carta · 2 Personas</span>
+<span class="font-body-md text-[13px] text-on-surface-variant" id="summary-details">Viernes 22 de Noviembre · 14:00 hrs · Salón Arcadas 1910</span>
+</div>
+<div class="pt-2 flex items-center justify-between text-[12px] text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">museum</span>
+          Incluye Pase Museo Arocena
+        </span>
+<span class="font-semibold text-primary">Liquidación en Sala</span>
+</div>
+</section>
+<!-- 8. Botón Principal CTA -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full py-4 px-6 rounded-lg bg-secondary hover:bg-secondary/90 text-on-secondary font-title-md text-[15px] flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+        Confirmar Reserva de Demostración
+      </button>
+<div class="flex items-center justify-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">lock</span>
+<p class="font-label-sm text-[11px] text-on-surface-variant">
+          Recibirás tu código de acceso QR por correo y WhatsApp al instante.
+        </p>
+</div>
+</div>
+</form>
+<!-- 9. Políticas de Asistencia y Preguntas Frecuentes -->
+<section class="mt-8 px-space-md flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Protocolo de Sala &amp; Visita</span>
+<div class="flex flex-col gap-2">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[13px] text-primary">Tolerancia de Cortesía</span>
+<span class="font-body-md text-[12px] text-on-surface-variant leading-relaxed">
+            Se mantienen reservadas las mesas hasta 15 minutos posteriores a la hora confirmada.
+          </span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">event_repeat</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[13px] text-primary">Modificaciones y Cancelaciones</span>
+<span class="font-body-md text-[12px] text-on-surface-variant leading-relaxed">
+            Sin penalización hasta 4 horas previas a través del enlace de WhatsApp recibido.
+          </span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">checkroom</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[13px] text-primary">Atmósfera y Código de Sala</span>
+<span class="font-body-md text-[12px] text-on-surface-variant leading-relaxed">
+            Casual elegante. Se solicita discreción sonora para preservar la armonía de las galerías.
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Modal de Confirmación Museográfica (Oculto inicialmente) -->
+<div class="fixed inset-0 z-50 bg-primary/70 backdrop-blur-sm hidden flex items-center justify-center px-4" id="confirmation-modal">
+<div class="w-full max-w-sm rounded-2xl bg-surface p-6 shadow-2xl flex flex-col items-center text-center animate-in fade-in zoom-in duration-200">
+<div class="w-16 h-16 rounded-full bg-secondary/15 flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[36px]">auto_awesome</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-1">MUSEO AROCENA · CONFIRMACIÓN</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">¡Reserva Registrada!</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed mb-4">
+        Hemos preparado tu mesa. El folio <strong class="text-primary">#EO-2411</strong> ha sido enviado a <span class="text-secondary font-medium" id="modal-email">valeria.morales@arocena.mx</span> junto a tus pases de cortesía para el museo.
+      </p>
+<!-- Ficha rápida de confirmación -->
+<div class="w-full p-3 rounded-xl bg-surface-container mb-4 text-left flex flex-col gap-1.5 text-[12px]">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Experiencia:</span>
+<span class="font-semibold text-primary" id="modal-exp">Mesa a la Carta</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Comensales:</span>
+<span class="font-semibold text-primary" id="modal-guests">2 personas</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Cita:</span>
+<span class="font-semibold text-primary" id="modal-datetime">Vie 22 Nov · 14:00 hrs</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg bg-primary text-on-primary font-title-md text-[14px]" onclick="closeConfirmationModal()" type="button">
+        Aceptar y Ver Detalles
+      </button>
+</div>
+</div>
+<script>
+    let currentSelection = {
+      experience: "Mesa a la Carta",
+      guests: "2",
+      date: "Vie 22 Nov",
+      time: "14:00",
+      space: "Salón Arcadas 1910"
+    };
+
+    function updateExpSelection(radio) {
+      currentSelection.experience = radio.value;
+      const cards = document.querySelectorAll('.exp-card');
+      cards.forEach(c => {
+        const input = c.querySelector('input');
+        const indicator = c.querySelector('.exp-indicator');
+        const dot = indicator.querySelector('span');
+        if (input.checked) {
+          c.classList.remove('bg-surface-container-low');
+          c.classList.add('bg-surface-container-lowest');
+          indicator.classList.remove('bg-surface-container-highest');
+          indicator.classList.add('bg-primary');
+          dot.classList.remove('bg-transparent');
+          dot.classList.add('bg-surface');
+        } else {
+          c.classList.remove('bg-surface-container-lowest');
+          c.classList.add('bg-surface-container-low');
+          indicator.classList.remove('bg-primary');
+          indicator.classList.add('bg-surface-container-highest');
+          dot.classList.remove('bg-surface');
+          dot.classList.add('bg-transparent');
+        }
+      });
+      syncSummary();
+    }
+
+    function selectGuests(count, btn) {
+      currentSelection.guests = count.toString();
+      document.querySelectorAll('.guest-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-primary');
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      document.getElementById('guests-label').textContent = count === '7+' ? 'Grupo Especial (7+)' : `${count} Personas`;
+      syncSummary();
+    }
+
+    function selectDate(dateStr, btn) {
+      currentSelection.date = dateStr;
+      document.querySelectorAll('.date-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+        const dayLabel = b.querySelector('.font-label-caps');
+        if (dayLabel) {
+          dayLabel.classList.remove('text-on-primary/80');
+          dayLabel.classList.add('text-on-surface-variant');
+        }
+        const numLabel = b.querySelector('.font-headline-sm');
+        if (numLabel) {
+          numLabel.classList.remove('text-on-primary');
+          numLabel.classList.add('text-primary');
+        }
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-primary');
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+      const activeDay = btn.querySelector('.font-label-caps');
+      if (activeDay) {
+        activeDay.classList.remove('text-on-surface-variant');
+        activeDay.classList.add('text-on-primary/80');
+      }
+      const activeNum = btn.querySelector('.font-headline-sm');
+      if (activeNum) {
+        activeNum.classList.remove('text-primary');
+        activeNum.classList.add('text-on-primary');
+      }
+      syncSummary();
+    }
+
+    function selectTime(timeStr, btn) {
+      currentSelection.time = timeStr;
+      document.querySelectorAll('.time-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-primary');
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      document.getElementById('time-label').textContent = `${timeStr} hrs`;
+      syncSummary();
+    }
+
+    function updateSpaceSelection(radio) {
+      currentSelection.space = radio.value;
+      document.querySelectorAll('.space-pref').forEach(card => {
+        const input = card.querySelector('input');
+        const indicator = card.querySelector('.space-indicator');
+        const dot = indicator.querySelector('span');
+        if (input.checked) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-container-lowest');
+          indicator.classList.remove('bg-surface-container-highest');
+          indicator.classList.add('bg-primary');
+          dot.classList.remove('bg-transparent');
+          dot.classList.add('bg-surface');
+        } else {
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-surface-container-low');
+          indicator.classList.remove('bg-primary');
+          indicator.classList.add('bg-surface-container-highest');
+          dot.classList.remove('bg-surface');
+          dot.classList.add('bg-transparent');
+        }
+      });
+      syncSummary();
+    }
+
+    function syncSummary() {
+      const summaryTitle = document.getElementById('summary-title');
+      const summaryDetails = document.getElementById('summary-details');
+      if (summaryTitle && summaryDetails) {
+        summaryTitle.textContent = `${currentSelection.experience} · ${currentSelection.guests} ${currentSelection.guests === '1' ? 'Persona' : 'Comensales'}`;
+        summaryDetails.textContent = `${currentSelection.date} · ${currentSelection.time} hrs · ${currentSelection.space}`;
+      }
+    }
+
+    function showConfirmationModal() {
+      const email = document.getElementById('cust-email').value;
+      document.getElementById('modal-email').textContent = email || 'tu correo';
+      document.getElementById('modal-exp').textContent = currentSelection.experience;
+      document.getElementById('modal-guests').textContent = `${currentSelection.guests} comensales`;
+      document.getElementById('modal-datetime').textContent = `${currentSelection.date} · ${currentSelection.time} hrs (${currentSelection.space})`;
+      document.getElementById('confirmation-modal').classList.remove('hidden');
+    }
+
+    function closeConfirmationModal() {
+      document.getElementById('confirmation-modal').classList.add('hidden');
+    }
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-secondary"><div class="flex items-center justify-around h-16 px-space-xs max-w-lg mx-auto"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">museum</span><span class="font-label-caps text-[10px] tracking-wide mt-0.5">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="menu" href="#"><span class="material-symbols-outlined text-[22px]">restaurant_menu</span><span class="font-label-caps text-[10px] tracking-wide mt-0.5">Menú</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="customize" href="#"><span class="material-symbols-outlined text-[22px]">palette</span><span class="font-label-caps text-[10px] tracking-wide mt-0.5">Personaliza</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="art-menu" href="#"><span class="material-symbols-outlined text-[22px]">gallery_thumbnail</span><span class="font-label-caps text-[10px] tracking-wide mt-0.5">Arte y Menú</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="events" href="#"><span class="material-symbols-outlined text-[22px]">confirmation_number</span><span class="font-label-caps text-[10px] tracking-wide mt-0.5">Eventos</span></a></div></nav></body></html>

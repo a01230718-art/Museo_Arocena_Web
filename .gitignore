@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Sensitive credentials & API keys
+Contraseñas
+Contrasen?as
+.env
+.env.*
+*.key
+*.pem
+
+# Temporary & build files
+*.log
+scratch/
+test_*.png
+test_*.txt
+patch_images.js

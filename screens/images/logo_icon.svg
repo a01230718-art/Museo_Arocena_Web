@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" fill="none">
+  <!-- Rounded Museum Emblem in Dark Onyx -->
+  <rect width="40" height="40" rx="10" fill="#1D1B19"/>
+  <!-- Elegant Arch Line in Terracotta -->
+  <path d="M12 30V19C12 14.5817 15.5817 11 20 11C24.4183 11 28 14.5817 28 19V30" stroke="#A04028" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Golden Ochre Star / Center Jewel -->
+  <circle cx="20" cy="19" r="2" fill="#E6A15C"/>
+  <!-- EO Monogram -->
+  <text x="20" y="30" font-family="'Playfair Display', Georgia, serif" font-size="10" font-weight="700" fill="#FEF9F1" text-anchor="middle" letter-spacing="-0.2">EO</text>
+</svg>
